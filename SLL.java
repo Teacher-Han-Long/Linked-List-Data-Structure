@@ -157,6 +157,19 @@ class SLL {
 		}
 	}
 	
+	//finds given data and returns true or false
+	public boolean searchData(ListNode head, int searchKey) {
+		if (head == null) return false;
+		ListNode curr = head;
+		while (curr != null) {
+			if (curr.data == searchKey) {
+				return true;
+			} 
+			curr = curr.next;
+		}
+		return false;
+	}
+	
 	
 	/* MAIN METHOD */
 	
@@ -199,6 +212,14 @@ class SLL {
 		ListNode fourthNode = sll.removeAtPosition(head, 4);
 		System.out.println(fourthNode.data);
 		sll.displayList(head);
+		//search an element
+		if (sll.searchData(head, 4)) {
+			System.out.println("Found it.");
+		} else {
+			System.out.println("Can't find it.");
+		}
+		
+		
 		System.out.println();
 	}
 }
